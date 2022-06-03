@@ -1,6 +1,17 @@
 // Place all the styles related to the SteamLibrary controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$body-color: rgb(21, 1, 31);
+$component-color: rgb(4, 15, 80);
+
+$native-color: #4da338;
+$platinum-color: rgb(180, 199, 220);
+$gold-color: #ffce41;
+$silver-color: rgb(166, 166, 166);
+$bronze-color: rgb(205, 127, 50);
+$borked-color: #bf5151;
+$unknown-color: rgb(187, 179, 179);
+
 @import "bootstrap";
 .row {
     padding-bottom: 10px;
@@ -34,7 +45,7 @@
  }
 
  body {
-     background-color: rgb(21, 1, 31);
+     background-color: $body-color;
  }
 
  p.light-gray {
@@ -42,7 +53,7 @@
  }
 
  button.btn {
-    background-color: rgb(4, 15, 80);
+    background-color: $component-color;
     color: white;
  }
 
@@ -57,8 +68,8 @@
  }
 
  input:focus {
-    border-bottom: 1px solid rgb(4, 15, 80) !important;
-    box-shadow: 0 1px 0 0 rgb(4, 15, 80) !important
+    border-bottom: 1px solid $component-color !important;
+    box-shadow: 0 1px 0 0 $component-color !important
 }
 
 div.white-body {
@@ -75,7 +86,7 @@ body {
 }
 
 footer {
-    background-color: rgb(21, 1, 31);
+    background-color: $body-color;
     left: 0px;
     width: 100%;
     position:absolute;
@@ -93,9 +104,45 @@ tbody > tr {
     font-weight: bold;
 }
 
-span.playable {
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
+span.playable-pie-chart {
+    // font-family: 'Font Awesome 6 Free';
+    // font-weight: 900;
+    font-weight: bold;
+}
+
+span.native-pie-chart {
+    color: $native-color;
+    font-weight: bold;
+}
+
+span.platinum-pie-chart {
+    color: $platinum-color;
+    font-weight: bold;
+}
+
+span.gold-pie-chart {
+    color: $gold-color;
+    font-weight: bold;
+}
+
+span.silver-pie-chart {
+    color: $silver-color;
+    font-weight: bold;
+}
+
+span.bronze-pie-chart {
+    color: $bronze-color;
+    font-weight: bold;
+}
+
+span.borked-pie-chart {
+    color: $borked-color;
+    font-weight: bold;
+}
+
+span.unknown-pie-chart {
+    color: $unknown-color;
+    font-weight: bold;
 }
 
 a.protondb_link:focus, a.protondb_link:visited, a.protondb_link:link, 
@@ -109,7 +156,7 @@ thead > tr {
 }
 
 tr.native {
-    background-color: #4da338;
+    background-color: $native-color;
 }
 
 tbody > tr.native > td > a.protondb_link , 
@@ -118,7 +165,7 @@ tbody > tr.native > th > a.protondb_link, tbody > tr.native > td {
 }
 
 i.native {
-    color: #4da338;
+    color: $native-color;
 }
 
 .table-striped > tbody > tr.native:nth-child(2n+1) > td > a, 
@@ -128,39 +175,39 @@ i.native {
 }
 
 tr.platinum {
-    background-color: rgb(180, 199, 220);
+    background-color: $platinum-color;
 }
 
 i.platinum {
-    color: rgb(180, 199, 220);
+    color: $platinum-color;
 }
 
 tr.gold {
-    background-color: #ffce41;
+    background-color: $gold-color;
 }
 
 i.gold {
-    color: #ffce41;
+    color: $gold-color;
 }
 
 tr.silver {
-    background-color: rgb(166, 166, 166);
+    background-color: $silver-color;
 }
 
 i.silver {
-    color: rgb(166, 166, 166);
+    color: $silver-color;
 }
 
 tr.bronze {
-    background-color: rgb(205, 127, 50);
+    background-color: $bronze-color;
 }
 
 i.bronze {
-    color: rgb(205, 127, 50);
+    color: $bronze-color;
 }
 
 tr.borked {
-    background-color: #bf5151;
+    background-color: $borked-color;
 }
 
 tbody > tr.borked > td > a.protondb_link , tbody > tr.borked > th > a.protondb_link, 
@@ -169,7 +216,7 @@ tbody > tr.borked > td {
 }
 
 i.borked {
-    color: #bf5151;
+    color: $borked-color;
 }
 
 .table-striped > tbody > tr.borked:nth-child(2n+1) > td > a, 
@@ -179,9 +226,9 @@ i.borked {
 }
 
 tr.unknown {
-    background-color: rgb(187, 179, 179);
+    background-color: $unknown-color;
 }
 
 i.unknown {
-    color: rgb(187, 179, 179);
+    color: $unknown-color;
 }

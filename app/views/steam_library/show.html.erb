@@ -1,7 +1,8 @@
 <div class="white-body">
   <%= render "pie_chart" %>
   <%= @steam_library_presenter.total_games %>
-  <%= link_to "Improve Your Ruby Skills", steam_library_show_path(:steam_library =>{steam_id: @steam_library_presenter.steam_id, checklist: @steam_library_presenter.change_list}) %>
+  <%= link_to "Improve Your Ruby Skills", steam_library_show_path(:steam_library =>
+        {steam_id: @steam_library_presenter.steam_id, checklist: @steam_library_presenter.change_list}) %>
   <table class='table table-striped'>
     <thead>
       <tr>
@@ -11,7 +12,7 @@
     <thead>
     <tbody>
       <% @steam_library_presenter.games.each do |game| %>
-        <tr class="<%=game.tier %>">
+        <tr class="<%= game.tier %>">
           <td><%= link_to game.name, game.protondb_url, target: "_blank", class: "protondb_link" %></td>
           <td><%= t("static_pages.show.tier.#{game.tier}") %>  <i class="<%= trending(game) %>"></i></td>
         </tr>

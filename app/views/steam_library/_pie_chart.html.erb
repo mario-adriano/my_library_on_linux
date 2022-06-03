@@ -3,45 +3,68 @@
         <tbody>
         <tr>
             <td rowspan='8'><%= games_pie_chart(@steam_library_presenter.games) %></td>
-            <td><i class="fa-solid fa-circle native"></i> + <i class="fa-solid fa-circle platinum"></i> + <i class="fa-solid fa-circle gold"></i> 
-            <span class="playable"><%= t("static_pages.show.playables")%>: </span>
-            <%= @steam_library_presenter.playable_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.playable_count) %> 
-            (<%= @steam_library_presenter.percentage_of_playables_with_character %>)</td>
+            <td>
+                <i class="fa-solid fa-circle native"></i> + <i class="fa-solid fa-circle platinum"></i> + <i class="fa-solid fa-circle gold"></i> 
+                <span class="playable-pie-chart"><%= t("static_pages.show.playables")%>: </span>
+                <%= @steam_library_presenter.playable_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.playable_count) %> 
+                (<%= @steam_library_presenter.percentage_of_playables_with_character %>)
+            </td>
         </tr>
         <tr>
-            <td><i class="fa-solid fa-circle native"> <%= t("static_pages.show.tier.native") %>: </i> 
-            <%= @steam_library_presenter.native_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.native_count) %> 
-            (<%= @steam_library_presenter.percentage_of_natives_with_character %>)</td>
+            <td>
+                <i class="fa-solid fa-circle native"></i> 
+                <span class="native-pie-chart"><%= t("static_pages.show.tier.native") %>: </span>
+                <%= @steam_library_presenter.native_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.native_count) %> 
+                (<%= @steam_library_presenter.percentage_of_natives_with_character %>)
+            </td>
         </tr>
         <tr>
-            <td><i class="fa-solid fa-circle platinum"> <%= t("static_pages.show.tier.platinum") %>: </i> 
-            <%= @steam_library_presenter.platinum_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.platinum_count) %> 
-            (<%= @steam_library_presenter.percentage_of_platinums_with_character %>)</td>
+            <td>
+                <i class="fa-solid fa-circle platinum"></i>
+                <span class="platinum-pie-chart"><%= t("static_pages.show.tier.platinum") %>: </span>
+                <%= @steam_library_presenter.platinum_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.platinum_count) %> 
+                (<%= @steam_library_presenter.percentage_of_platinums_with_character %>)
+            </td>
         </tr>
         <tr>
-            <td><i class="fa-solid fa-circle gold"> <%= t("static_pages.show.tier.gold") %>: </i> 
-            <%= @steam_library_presenter.gold_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.gold_count) %> 
-            (<%= @steam_library_presenter.percentage_of_golds_with_character %>)</td>
+            <td>
+                <i class="fa-solid fa-circle gold"></i> 
+                <span class="gold-pie-chart"><%= t("static_pages.show.tier.gold") %>: </span>
+                <%= @steam_library_presenter.gold_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.gold_count) %> 
+                (<%= @steam_library_presenter.percentage_of_golds_with_character %>)
+            </td>
         </tr>
         <tr>
-            <td><i class="fa-solid fa-circle silver"> <%= t("static_pages.show.tier.silver") %>: </i> 
-            <%= @steam_library_presenter.silver_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.silver_count) %> 
-            (<%= @steam_library_presenter.percentage_of_silvers_with_character %>)</td>
+            <td>
+                <i class="fa-solid fa-circle silver"></i> 
+                <span class="silver-pie-chart"><%= t("static_pages.show.tier.silver") %>: </span>
+                <%= @steam_library_presenter.silver_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.silver_count) %> 
+                (<%= @steam_library_presenter.percentage_of_silvers_with_character %>)
+            </td>
         </tr>
         <tr>
-            <td><i class="fa-solid fa-circle bronze"> <%= t("static_pages.show.tier.bronze") %>: </i> 
-            <%= @steam_library_presenter.bronze_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.bronze_count) %> 
-            (<%= @steam_library_presenter.percentage_of_bronzes_with_character %>)</td>
+            <td>
+                <i class="fa-solid fa-circle bronze"></i> 
+                <span class="bronze-pie-chart"><%= t("static_pages.show.tier.bronze") %>: </span>
+                <%= @steam_library_presenter.bronze_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.bronze_count) %> 
+                (<%= @steam_library_presenter.percentage_of_bronzes_with_character %>)
+            </td>
         </tr>
         <tr>
-            <td><i class="fa-solid fa-circle borked"> <%= t("static_pages.show.tier.borked") %>: </i> 
-            <%= @steam_library_presenter.borked_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.borked_count) %> 
-            (<%= @steam_library_presenter.percentage_of_borkeds_with_character %>)</td>
+            <td>
+                <i class="fa-solid fa-circle borked"></i> 
+                <span class="borked-pie-chart"><%= t("static_pages.show.tier.borked") %>: </span>
+                <%= @steam_library_presenter.borked_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.borked_count) %> 
+                (<%= @steam_library_presenter.percentage_of_borkeds_with_character %>)
+            </td>
         </tr>
         <tr>
-            <td><i class="fa-solid fa-circle unknown"> <%= t("static_pages.show.tier.unknown") %>: </i> 
-            <%= @steam_library_presenter.unknown_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.unknown_count) %> 
-            (<%= @steam_library_presenter.percentage_of_unknowns_with_character %>)</td>
+            <td>
+                <i class="fa-solid fa-circle unknown"></i> 
+                <span class="unknown-pie-chart"><%= t("static_pages.show.tier.unknown") %>: </span>
+                <%= @steam_library_presenter.unknown_count %> <%= @steam_library_presenter.game_or_games(@steam_library_presenter.unknown_count) %> 
+                (<%= @steam_library_presenter.percentage_of_unknowns_with_character %>)
+            </td>
         </tr>
         </tbody>
     </table>
