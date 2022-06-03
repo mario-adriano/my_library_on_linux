@@ -78,8 +78,15 @@ footer {
     background-color: rgb(21, 1, 31);
     left: 0px;
     width: 100%;
-    bottom: 0;
     position:absolute;
+}
+
+footer.bottom-0 {
+    bottom: 0;
+}
+
+footer.bottom-10 {
+    bottom: 10;
 }
 
 tbody > tr {
