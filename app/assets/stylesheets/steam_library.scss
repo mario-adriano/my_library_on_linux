@@ -1,0 +1,175 @@
+// Place all the styles related to the SteamLibrary controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+@import "bootstrap";
+.row {
+    padding-bottom: 10px;
+}
+
+.div-center {
+    height: 400px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: 100%;
+    max-height: 100%;
+    overflow: auto;
+    padding: 1em 2em;
+    border-bottom: 2px solid #ccc;
+    display: table;
+}
+
+@font-face {
+    font-family: 'Mad_Pixels';
+    src: url('/assets/Mad_Pixels.otf')
+ }
+
+ h1 {
+    font-family: 'Mad_Pixels';
+    color: #fff;
+ }
+
+ body {
+     background-color: rgb(21, 1, 31);
+ }
+
+ p.light-gray {
+     color: #ccc;
+ }
+
+ button.btn {
+    background-color: rgb(4, 15, 80);
+    color: white;
+ }
+
+ button.btn:hover {
+    background-color: rgb(5, 19, 100);
+    color: white;
+ }
+
+ input.form-control {
+     color: #ccc !important;
+     font-weight: bold;
+ }
+
+ input:focus {
+    border-bottom: 1px solid rgb(4, 15, 80) !important;
+    box-shadow: 0 1px 0 0 rgb(4, 15, 80) !important
+}
+
+div.white-body {
+    background-color: #fff;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 100px;
+}
+
+footer {
+    background-color: rgb(21, 1, 31);
+    left: 0px;
+    width: 100%;
+    bottom: 0;
+    position:absolute;
+}
+
+tbody > tr {
+    font-weight: bold;
+}
+
+a.protondb_link:focus, a.protondb_link:visited, a.protondb_link:link, 
+a.protondb_link:active, a.protondb_link:hover {
+    color: black;
+}
+
+thead > tr {
+    background-color: black;
+    color: white ;
+}
+
+tr.native {
+    background-color: #4da338;
+}
+
+tbody > tr.native > td > a.protondb_link , 
+tbody > tr.native > th > a.protondb_link, tbody > tr.native > td {
+    color: white ;
+}
+
+i.native {
+    color: #4da338;
+}
+
+.table-striped > tbody > tr.native:nth-child(2n+1) > td > a, 
+.table-striped > tbody > tr.native:nth-child(2n+1) > th > a, 
+.table-striped > tbody > tr.native:nth-child(2n+1) > td {
+    color: white;
+}
+
+tr.platinum {
+    background-color: rgb(180, 199, 220);
+}
+
+i.platinum {
+    color: rgb(180, 199, 220);
+}
+
+tr.gold {
+    background-color: #ffce41;
+}
+
+i.gold {
+    color: #ffce41;
+}
+
+tr.silver {
+    background-color: rgb(166, 166, 166);
+}
+
+i.silver {
+    color: rgb(166, 166, 166);
+}
+
+tr.bronze {
+    background-color: rgb(205, 127, 50);
+}
+
+i.bronze {
+    color: rgb(205, 127, 50);
+}
+
+tr.borked {
+    background-color: #bf5151;
+}
+
+tbody > tr.borked > td > a.protondb_link , tbody > tr.borked > th > a.protondb_link, 
+tbody > tr.borked > td {
+    color: white ;
+}
+
+i.borked {
+    color: #bf5151;
+}
+
+.table-striped > tbody > tr.borked:nth-child(2n+1) > td > a, 
+.table-striped > tbody > tr.borked:nth-child(2n+1) > th > a, 
+.table-striped > tbody > tr.borked:nth-child(2n+1) > td {
+    color: white;
+}
+
+tr.unknown {
+    background-color: rgb(187, 179, 179);
+}
+
+i.unknown {
+    color: rgb(187, 179, 179);
+}

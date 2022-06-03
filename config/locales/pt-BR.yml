@@ -1,0 +1,26 @@
+pt-BR:
+  static_pages:
+    index:
+      title: "MyLibraryOnLinux"
+      submit: "Enviar"
+      loading: "Carregando..."
+      check: "Verifique a compartibilidade da sua biblioteca"
+    footer:
+      website_is_not_affiliated: "Este site não tem afiliação com a Valve Software."
+      mit_license: "Licença MIT"
+    show:
+      tier:
+        native: "NATIVO"
+        platinum: "PLATINA"
+        gold: "OURO"
+        silver: "PRATA"
+        bronze: "BRONZE"
+        borked: "QUEBRADO"
+        unknown: "DESCONHECIDO"
+  games:
+    errors:
+      appid_must_be _unique: "Appid deve ser único."
+  steam_library:
+    errors:
+      an_error_occurred: "Ocorreu um erro!"
+      invalid_value: "Valor inválido."

@@ -1,0 +1,34 @@
+<%= render "header" %>
+<div class="container-fluid" style="margin-top: 5%">
+  
+  <div class="light-well box">
+    <div class="row">
+      <h1 class="page-header text-center"><%= t('static_pages.index.title') %></h1>
+      <p class="light-gray text-center"><%= t('static_pages.index.check')%></p>
+    </div>
+    <div class="col-sm-12">
+      <%= form_with model: @steam_library, method: :get, url: steam_library_show_path, local: true do |f| %>
+        <%= hidden_field_tag "steam_library[checklist]", "#{SteamLibrary.checklist_library}" %>
+        <div class="row">
+          <div class="col-sm-5"></div>
+          <div class="col-sm-2">
+            <div class="form-group">
+              <%= f.text_field :steam_id, autofocus: true, placeholder: "SteamID", class: "form-control", style: "height:45px" %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-5"></div>
+          <div class="col-sm-2">
+            <div class="form-group">
+              <%= f.button t('static_pages.index.submit'), class:"form-control btn col-sm-12 btn-success btn-lg btn-block btn", data: { disable_with: "<i class='fas fa-spinner fa-spin'></i> #{t('static_pages.index.loading')}"} %>
+            </div>
+            <div class="login-or">
+              <%= flash_messages %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+  </div>
+</div>
+<%= render "footer" %>

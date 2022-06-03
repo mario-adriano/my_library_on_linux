@@ -1,0 +1,11 @@
+Rails.application.routes.draw do
+  root 'steam_library#index'
+
+  # get 'steam_library/index'
+  # get 'steam_library/show'
+  # resources :my_libraries
+  get 'steam_library/show', to: 'steam_library#show', as: 'steam_library_show'
+  get 'steam_library/index', to: 'steam_library#index', as: 'steam_library'
+  get 'steam_library/error', as: 'steam_library_error'
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+end
