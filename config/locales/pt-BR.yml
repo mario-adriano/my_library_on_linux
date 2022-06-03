@@ -17,6 +17,9 @@ pt-BR:
         bronze: "BRONZE"
         borked: "QUEBRADO"
         unknown: "DESCONHECIDO"
+      table:
+        title: "Título"
+        status: "Status"
   games:
     errors:
       appid_must_be _unique: "Appid deve ser único."
