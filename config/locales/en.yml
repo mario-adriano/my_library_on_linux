@@ -20,6 +20,9 @@ en:
       table:
         title: "Title"
         status: "Status"
+      game: "game"
+      games: "games"
+      playables: "PLAYABLES"
   games:
     errors:
       appid_must_be _unique: "Appid must be unique."

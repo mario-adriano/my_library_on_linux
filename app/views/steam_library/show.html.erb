@@ -1,39 +1,7 @@
 <div class="white-body">
-<div class="container" align="center">
-  <table class="table w-auto small">
-    <tbody>
-      <tr>
-        <td rowspan='8'><%= games_pie_chart(@steam_library.games) %></td>
-        <td><i class="fa-solid fa-circle native"></i> + <i class="fa-solid fa-circle platinum"></i> + <i class="fa-solid fa-circle gold"></i> JOGAVEL: 66 games (55%%)</td>
-      </tr>
-      <tr>
-        <td><i class="fa-solid fa-circle native"> <%= t("static_pages.show.tier.native") %>:</i></td>
-      </tr>
-      <tr>
-        <td><i class="fa-solid fa-circle platinum"> <%= t("static_pages.show.tier.platinum") %>:</i></td>
-      </tr>
-      <tr>
-        <td><i class="fa-solid fa-circle gold"> <%= t("static_pages.show.tier.gold") %></i></td>
-      </tr>
-      <tr>
-        <td><i class="fa-solid fa-circle silver"> <%= t("static_pages.show.tier.silver") %></i></td>
-      </tr>
-      <tr>
-        <td><i class="fa-solid fa-circle bronze"> <%= t("static_pages.show.tier.bronze") %></i></td>
-      </tr>
-      <tr>
-        <td><i class="fa-solid fa-circle borked"> <%= t("static_pages.show.tier.borked") %></i></td>
-      </tr>
-      <tr>
-        <td><i class="fa-solid fa-circle unknown"> <%= t("static_pages.show.tier.unknown") %></i></td>
-      </tr>
-    </tbody>
-  </table>
-  </div>
-
-
-  <%= @steam_library.total_games %>
-  <%= link_to "Improve Your Ruby Skills", steam_library_show_path(:steam_library =>{steam_id: @steam_library.steam_id, checklist: @steam_library.change_list}) %>
+  <%= render "pie_chart" %>
+  <%= @steam_library_presenter.total_games %>
+  <%= link_to "Improve Your Ruby Skills", steam_library_show_path(:steam_library =>{steam_id: @steam_library_presenter.steam_id, checklist: @steam_library_presenter.change_list}) %>
   <table class='table table-striped'>
     <thead>
       <tr>
@@ -42,7 +10,7 @@
       </tr>
     <thead>
     <tbody>
-      <% @steam_library.games.each do |game| %>
+      <% @steam_library_presenter.games.each do |game| %>
         <tr class="<%=game.tier %>">
           <td><%= link_to game.name, game.protondb_url, target: "_blank", class: "protondb_link" %></td>
           <td><%= t("static_pages.show.tier.#{game.tier}") %>  <i class="<%= trending(game) %>"></i></td>

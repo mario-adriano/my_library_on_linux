@@ -20,6 +20,9 @@ pt-BR:
       table:
         title: "Título"
         status: "Status"
+      game: "jogo"
+      games: "jogos"
+      playables: "JOGÁVEIS"
   games:
     errors:
       appid_must_be _unique: "Appid deve ser único."

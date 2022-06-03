@@ -93,6 +93,11 @@ tbody > tr {
     font-weight: bold;
 }
 
+span.playable {
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
 a.protondb_link:focus, a.protondb_link:visited, a.protondb_link:link, 
 a.protondb_link:active, a.protondb_link:hover {
     color: black;

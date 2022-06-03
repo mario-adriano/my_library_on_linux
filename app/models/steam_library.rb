@@ -40,4 +40,23 @@ class SteamLibrary
   def total_games
     games.count
   end
+
+  def playable_count
+    games.select { |game| game.tier == 'native' || game.tier == 'platinum' || game.tier == 'gold' }.size
+  end
+
+  def percentage_of_playables
+    ((playable_count.to_f * 100) / total_games).round(2).truncate(2)
+  end
+
+  Game.tiers.each do |key, _value|
+    define_method :"#{key}_count" do
+      games.select { |game| game.tier == key }.size
+    end
+
+    define_method :"percentage_of_#{key.pluralize}" do
+      count = instance_eval("#{key}_count", __FILE__, __LINE__)
+      ((count.to_f * 100) / total_games).round(2).truncate(2)
+    end
+  end
 end

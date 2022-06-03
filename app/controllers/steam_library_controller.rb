@@ -11,6 +11,7 @@ class SteamLibraryController < ApplicationController
     @steam_library = SteamLibrary.new(steam_library_params)
     if @steam_library.valid?
       @steam_library.games = load_service
+      @steam_library_presenter = SteamLibraryPresenter.new(@steam_library)
       redirect_to steam_library_error_path if zero_game_count?
     else
       show_error_message_and_change_page(I18n.t('steam_library.errors.invalid_value'), steam_library_path)
