@@ -1,7 +1,6 @@
 class SteamLibraryPresenter < SimpleDelegator
   Game.tiers.each do |key, _value|
     define_method :"percentage_of_#{key.pluralize}_with_character" do
-      # result = instance_eval("percentage_of_#{key.pluralize}", __FILE__, __LINE__)
       result = send("percentage_of_#{key.pluralize}")
       result.to_s.concat('%')
     end
