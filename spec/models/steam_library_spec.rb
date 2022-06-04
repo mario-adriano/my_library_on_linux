@@ -71,4 +71,50 @@ RSpec.describe SteamLibrary, type: :model do
       expect(steam_library.total_games).to eql(2)
     end
   end
+
+  context 'Test count and percentage with tier' do
+    Game.tiers.each do |key, _value|
+      no_current_status = Game.tiers.reject { |tier| tier == key.to_s }.first[0]
+      steam_library = SteamLibrary.new('games' => [Game.new(name: 'Half-Life 3', appid: '12312100', tier: key,
+                                                            trending_tier: key),
+                                                   Game.new(name: 'Portal 3', appid: '12312099', tier: key,
+                                                            trending_tier: key),
+                                                   Game.new(name: 'FIFA 50', appid: '12312299',
+                                                            tier: no_current_status,
+                                                            trending_tier: no_current_status)])
+
+      it "Should return '2' with #{key}_count" do
+        expect(steam_library.send("#{key}_count")).to eql(2)
+      end
+
+      it "Should return '66.67' with percentage_of_#{key.pluralize}" do
+        expect(steam_library.send("percentage_of_#{key.pluralize}")).to eql(66.67)
+      end
+    end
+  end
+
+  context 'Test count and percentage of playables' do
+    steam_library = SteamLibrary.new('games' => [Game.new(name: 'Half-Life 3', appid: '12312100', tier: :native,
+                                                          trending_tier: :native),
+                                                 Game.new(name: 'Portal 3', appid: '12312101', tier: :platinum,
+                                                          trending_tier: :platinum),
+                                                 Game.new(name: 'FIFA 50', appid: '12312102', tier: :gold,
+                                                          trending_tier: :gold),
+                                                 Game.new(name: 'Chrono Trigger 2', appid: '12312103', tier: :silver,
+                                                          trending_tier: :silver),
+                                                 Game.new(name: 'Super Star Soccer 2', appid: '12312104',
+                                                          tier: :bronze, trending_tier: :bronze),
+                                                 Game.new(name: 'Final Fight 4', appid: '12312105', tier: :borked,
+                                                          trending_tier: :borked),
+                                                 Game.new(name: 'Rock & Roll Racing 2', appid: '12312106',
+                                                          tier: :unknown, trending_tier: :unknown)])
+
+    it "Should return '3' with playable_count" do
+      expect(steam_library.playable_count).to eql(3)
+    end
+
+    it "Should return '42.86' with percentage_of_playables" do
+      expect(steam_library.percentage_of_playables).to eql(42.86)
+    end
+  end
 end

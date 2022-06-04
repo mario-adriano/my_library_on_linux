@@ -55,7 +55,7 @@ class SteamLibrary
     end
 
     define_method :"percentage_of_#{key.pluralize}" do
-      count = instance_eval("#{key}_count", __FILE__, __LINE__)
+      count = send("#{key}_count")
       ((count.to_f * 100) / total_games).round(2).truncate(2)
     end
   end
