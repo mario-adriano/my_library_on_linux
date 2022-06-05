@@ -13,4 +13,8 @@ class SteamLibraryPresenter < SimpleDelegator
   def game_or_games(value)
     value > 1 ? I18n.t('static_pages.show.games') : I18n.t('static_pages.show.game')
   end
+
+  def list_link_name
+    checklist == 'wishlist' ? I18n.t('static_pages.show.go_to_library') : I18n.t('static_pages.show.go_to_wishlist')
+  end
 end

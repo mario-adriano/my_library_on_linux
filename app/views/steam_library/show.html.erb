@@ -1,8 +1,7 @@
 <div class="white-body">
   <%= render "pie_chart" %>
-  <%= @steam_library_presenter.total_games %>
-  <%= link_to "Improve Your Ruby Skills", steam_library_show_path(:steam_library =>
-        {steam_id: @steam_library_presenter.steam_id, checklist: @steam_library_presenter.change_list}) %>
+  <%= link_to @steam_library_presenter.list_link_name, steam_library_show_path(:steam_library =>
+        {steam_id: @steam_library_presenter.steam_id, checklist: @steam_library_presenter.change_list}), class: "btn btn-primary btn-lg list-link" %>
   <table class='table table-striped'>
     <thead>
       <tr>

@@ -23,6 +23,8 @@ pt-BR:
       game: "jogo"
       games: "jogos"
       playables: "JOGÁVEIS"
+      go_to_wishlist: "Ir para Lista de Desejo"
+      go_to_library: "Ir para Biblioteca"
   games:
     errors:
       appid_must_be _unique: "Appid deve ser único."

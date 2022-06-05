@@ -23,6 +23,8 @@ en:
       game: "game"
       games: "games"
       playables: "PLAYABLES"
+      go_to_wishlist: "Go to Wishlist"
+      go_to_library: "Go to Library"
   games:
     errors:
       appid_must_be _unique: "Appid must be unique."

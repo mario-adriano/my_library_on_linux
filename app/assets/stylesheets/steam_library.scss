@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 $body-color: rgb(21, 1, 31);
 $component-color: rgb(4, 15, 80);
+$component-color-hover: rgb(5, 19, 100);
 
 $native-color: #4da338;
 $platinum-color: rgb(180, 199, 220);
@@ -58,8 +59,23 @@ $unknown-color: rgb(187, 179, 179);
  }
 
  button.btn:hover {
-    background-color: rgb(5, 19, 100);
+    background-color: $component-color-hover;
     color: white;
+ }
+
+ a.btn {
+    background-color: $component-color;
+    color: white;
+ }
+
+ a.btn:hover {
+    background-color: $component-color-hover;
+    color: white;
+ }
+
+ a.list-link {
+     margin-left: 2px;
+     margin-bottom: 2px;
  }
 
  input.form-control {
