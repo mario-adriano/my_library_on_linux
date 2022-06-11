@@ -120,9 +120,9 @@ module SteamLibraryService
   end
 
   def load_library(games)
-    games = Game.where(appid: games.try do
-                                map(&:appid)
-                              end).sort_by { |game| [game.numeric_tier_value, game.numeric_trending_tier_value] }
+    games = Game.find_by_appids_and_order_by_tier(games.try do
+                                                    map(&:appid)
+                                                  end)
     games.map { |game| GamePresenter.new(game) }
   end
 

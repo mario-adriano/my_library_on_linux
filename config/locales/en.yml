@@ -27,7 +27,7 @@ en:
       go_to_library: "Go to Library"
   games:
     errors:
-      appid_must_be _unique: "Appid must be unique."
+      appid_must_be_unique: "Appid must be unique."
   steam_library:
     errors:
       an_error_occurred: "An error occurred!"

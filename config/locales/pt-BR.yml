@@ -27,7 +27,7 @@ pt-BR:
       go_to_library: "Ir para Biblioteca"
   games:
     errors:
-      appid_must_be _unique: "Appid deve ser único."
+      appid_must_be_unique: "Appid deve ser único."
   steam_library:
     errors:
       an_error_occurred: "Ocorreu um erro!"

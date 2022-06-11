@@ -22,6 +22,8 @@ class Game < ApplicationRecord
   validates :tier, presence: true
   validates :trending_tier, presence: true
 
+  scope :find_by_appids_and_order_by_tier, ->(appids) { where(appid: appids).order(:tier, :trending_tier) }
+
   NATIVE = 'native'
 
   def need_to_update?
