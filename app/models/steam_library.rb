@@ -29,17 +29,11 @@ class SteamLibrary
     end
   end
 
-  def self.checklist_wishlist
-    'wishlist'
-  end
+  def self.checklist_wishlist = 'wishlist'
 
-  def self.checklist_library
-    'library'
-  end
+  def self.checklist_library = 'library'
 
-  def total_games
-    games.count
-  end
+  def total_games = games.count
 
   def playable_count
     games.select { |game| game.tier == 'native' || game.tier == 'platinum' || game.tier == 'gold' }.size

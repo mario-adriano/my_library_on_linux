@@ -1,0 +1,17 @@
+{"response":{"game_count":2,"games":[
+            {"appid":"12312100","name":"Half_life 3"}, 
+            {"appid":"005","name":"Half_life 4"},
+            {"appid":"006","name":"Half_life 1"},
+            {"appid":"002","name":"Half_life 2"},
+            {"appid":"008","name":"Half_life 8"},
+            {"appid":"007","name":"Half_life 7"},
+            {"appid":"004","name":"Half_life 5"},
+            {"appid":"011","name":"Half_life 11"},
+            {"appid":"009","name":"Half_life 9"},
+            {"appid":"001","name":"Half_life 6"},
+            {"appid":"010","name":"Half_life 10"},
+            {"appid":"012","name":"Half_life 12"},
+            {"appid":"003","name":"Half_life 13"}
+        ]
+    }
+}

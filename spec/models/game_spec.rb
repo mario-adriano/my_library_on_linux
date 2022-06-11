@@ -3,14 +3,14 @@ require 'rails_helper'
 # rubocop:disable Metrics/BlockLength
 RSpec.describe Game, type: :model do
   context 'validate all fields' do
-    it 'Must be valid' do
+    it 'Should be valid' do
       game = Game.new(name: 'Bioshock 4', appid: '11112025')
       expect(game).to be_valid
     end
   end
 
   context 'Validating appid' do
-    it 'Must not be valid' do
+    it 'Should not be valid' do
       game = Fabricate.build(:game, appid: '')
       expect(game).to_not be_valid
       expect(game.errors[:appid]).to(include("can't be blank"))
@@ -25,7 +25,7 @@ RSpec.describe Game, type: :model do
   end
 
   context 'Validating name' do
-    it 'Must not be valid' do
+    it 'Should not be valid' do
       game = Fabricate.build(:game, name: '')
       expect(game).to_not be_valid
       expect(game.errors[:name]).to(include("can't be blank"))
@@ -49,36 +49,36 @@ RSpec.describe Game, type: :model do
   context 'Testing need_to_update method in game windows' do
     it 'Should return true for games with the same tier within 5 days' do
       game = Fabricate.build(:game, id: 1, tier: :gold, trending_tier: :gold, updated_at: Date.today - 5.days)
-      expect(game.need_to_update?).to be true
+      expect(game.need_to_update?).to be_truthy
     end
 
     it 'Should return false for games with the same tier within 4 days' do
       game = Fabricate.build(:game, id: 1, tier: :gold, trending_tier: :gold, updated_at: Date.today - 4.days)
-      expect(game.need_to_update?).to be false
+      expect(game.need_to_update?).to be_falsey
     end
 
     it 'Should return true for games with the different tier within 3 days' do
       game = Fabricate.build(:game, id: 1, tier: :platinum, trending_tier: :gold,
                                     updated_at: Date.today - 3.days)
-      expect(game.need_to_update?).to be true
+      expect(game.need_to_update?).to be_truthy
     end
 
     it 'Should return false for games with the different tier within 2 days' do
       game = Fabricate.build(:game, id: 1, tier: :platinum, trending_tier: :gold,
                                     updated_at: Date.today - 2.days)
-      expect(game.need_to_update?).to be false
+      expect(game.need_to_update?).to be_falsey
     end
   end
 
   context 'Testing need_to_update method in native game' do
     it 'Should return true for games with the same tier within 2 weeks and 1 day' do
       game = Fabricate.build(:game, id: 1, tier: :native, updated_at: Date.today - 2.weeks - 1.days)
-      expect(game.need_to_update?).to be true
+      expect(game.need_to_update?).to be_truthy
     end
 
     it 'Should return false for games with the same tier within 2 weeks' do
       game = Fabricate.build(:game, id: 1, tier: :native, updated_at: Date.today - 2.weeks)
-      expect(game.need_to_update?).to be false
+      expect(game.need_to_update?).to be_falsey
     end
   end
 

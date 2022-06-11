@@ -260,4 +260,239 @@ RSpec.describe SteamLibraryService::ShowLibraryService, type: :service do
       end
     end
   end
+
+  describe 'Testing sorting' do
+    let(:steam_seven_games_response) { File.open('./spec/fixtures/steam/steam_seven_games.json') }
+
+    let(:wishlist_seven_response) { File.open('./spec/fixtures/wishlist/wishlistdata_seven_games.json') }
+
+    let(:appdetails_native_response) { File.open('./spec/fixtures/appdetails/appdetails_linux.json') }
+    let(:appdetails_001_response) { File.open('./spec/fixtures/appdetails/appdetails_001.json') }
+    let(:appdetails_002_response) { File.open('./spec/fixtures/appdetails/appdetails_002.json') }
+    let(:appdetails_003_response) { File.open('./spec/fixtures/appdetails/appdetails_003.json') }
+    let(:appdetails_004_response) { File.open('./spec/fixtures/appdetails/appdetails_004.json') }
+    let(:appdetails_005_response) { File.open('./spec/fixtures/appdetails/appdetails_005.json') }
+    let(:appdetails_006_response) { File.open('./spec/fixtures/appdetails/appdetails_006.json') }
+    let(:appdetails_007_response) { File.open('./spec/fixtures/appdetails/appdetails_007.json') }
+    let(:appdetails_008_response) { File.open('./spec/fixtures/appdetails/appdetails_008.json') }
+    let(:appdetails_009_response) { File.open('./spec/fixtures/appdetails/appdetails_009.json') }
+    let(:appdetails_010_response) { File.open('./spec/fixtures/appdetails/appdetails_010.json') }
+    let(:appdetails_011_response) { File.open('./spec/fixtures/appdetails/appdetails_011.json') }
+    let(:appdetails_012_response) { File.open('./spec/fixtures/appdetails/appdetails_012.json') }
+
+    let(:proton_platinum_platinum_response) { File.open('./spec/fixtures/protondb/proton_platinum_platinum.json') }
+    let(:proton_platinum_gold_response) { File.open('./spec/fixtures/protondb/proton_platinum_gold.json') }
+    let(:proton_gold_platinum_response) { File.open('./spec/fixtures/protondb/proton_gold_platinum.json') }
+    let(:proton_gold_gold_response) { File.open('./spec/fixtures/protondb/proton_gold_gold.json') }
+    let(:proton_gold_silver_response) { File.open('./spec/fixtures/protondb/proton_gold_silver.json') }
+    let(:proton_silver_gold_response) { File.open('./spec/fixtures/protondb/proton_silver_gold.json') }
+    let(:proton_silver_silver_response) { File.open('./spec/fixtures/protondb/proton_silver_silver.json') }
+    let(:proton_silver_bronze_response) { File.open('./spec/fixtures/protondb/proton_silver_bronze.json') }
+    let(:proton_bronze_silver_response) { File.open('./spec/fixtures/protondb/proton_bronze_silver.json') }
+    let(:proton_bronze_bronze_response) { File.open('./spec/fixtures/protondb/proton_bronze_bronze.json') }
+    let(:proton_borked_borked_response) { File.open('./spec/fixtures/protondb/proton_borked_borked.json') }
+    let(:proton_unknown_unknown_response) { File.open('./spec/fixtures/protondb/proton_unknown_unknown.json') }
+
+    let(:library_api) do
+      "https://api.steampowered.com/IPlayerService/GetOwnedGames/v1/?key=#{ENV['STEAM_KEY']}&steamid=12345678912345678&include_appinfo=true&include_played_free_games=true&appids_filter=[]"
+    end
+
+    let(:wishlist_api) do
+      'https://store.steampowered.com/wishlist/profiles/12345678912345678/wishlistdata/?p=0'
+    end
+
+    let(:store_steamwered) do
+      'https://store.steampowered.com/api/appdetails?appids=12312100'
+    end
+    let(:store_steamwered001) do
+      'https://store.steampowered.com/api/appdetails?appids=001'
+    end
+    let(:store_steamwered002) do
+      'https://store.steampowered.com/api/appdetails?appids=002'
+    end
+    let(:store_steamwered003) do
+      'https://store.steampowered.com/api/appdetails?appids=003'
+    end
+    let(:store_steamwered004) do
+      'https://store.steampowered.com/api/appdetails?appids=004'
+    end
+    let(:store_steamwered005) do
+      'https://store.steampowered.com/api/appdetails?appids=005'
+    end
+    let(:store_steamwered006) do
+      'https://store.steampowered.com/api/appdetails?appids=006'
+    end
+    let(:store_steamwered007) do
+      'https://store.steampowered.com/api/appdetails?appids=007'
+    end
+    let(:store_steamwered008) do
+      'https://store.steampowered.com/api/appdetails?appids=008'
+    end
+    let(:store_steamwered009) do
+      'https://store.steampowered.com/api/appdetails?appids=009'
+    end
+    let(:store_steamwered010) do
+      'https://store.steampowered.com/api/appdetails?appids=010'
+    end
+    let(:store_steamwered011) do
+      'https://store.steampowered.com/api/appdetails?appids=011'
+    end
+    let(:store_steamwered012) do
+      'https://store.steampowered.com/api/appdetails?appids=012'
+    end
+
+    let(:platinum_platinum_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/001.json'
+    end
+    let(:platinum_gold_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/002.json'
+    end
+    let(:gold_platinum_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/003.json'
+    end
+    let(:gold_gold_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/004.json'
+    end
+    let(:gold_silver_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/005.json'
+    end
+    let(:silver_gold_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/006.json'
+    end
+    let(:silver_silver_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/007.json'
+    end
+    let(:silver_bronze_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/008.json'
+    end
+    let(:bronze_silver_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/009.json'
+    end
+    let(:bronze_bronze_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/010.json'
+    end
+    let(:borked_borked_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/011.json'
+    end
+    let(:unknown_unknown_protondb) do
+      'https://www.protondb.com/api/v1/reports/summaries/012.json'
+    end
+
+    before do
+      stub_request(:get, library_api)
+        .to_return(status: 200, body: steam_seven_games_response)
+
+      stub_request(:get, wishlist_api)
+        .to_return(status: 200, body: wishlist_seven_response)
+
+      stub_request(:get, store_steamwered)
+        .to_return(status: 200, body: appdetails_native_response)
+
+      stub_request(:get, store_steamwered001)
+        .to_return(status: 200, body: appdetails_001_response)
+
+      stub_request(:get, store_steamwered002)
+        .to_return(status: 200, body: appdetails_002_response)
+
+      stub_request(:get, store_steamwered003)
+        .to_return(status: 200, body: appdetails_003_response)
+
+      stub_request(:get, store_steamwered004)
+        .to_return(status: 200, body: appdetails_004_response)
+
+      stub_request(:get, store_steamwered005)
+        .to_return(status: 200, body: appdetails_005_response)
+
+      stub_request(:get, store_steamwered006)
+        .to_return(status: 200, body: appdetails_006_response)
+
+      stub_request(:get, store_steamwered007)
+        .to_return(status: 200, body: appdetails_007_response)
+
+      stub_request(:get, store_steamwered008)
+        .to_return(status: 200, body: appdetails_008_response)
+
+      stub_request(:get, store_steamwered009)
+        .to_return(status: 200, body: appdetails_009_response)
+
+      stub_request(:get, store_steamwered010)
+        .to_return(status: 200, body: appdetails_010_response)
+
+      stub_request(:get, store_steamwered011)
+        .to_return(status: 200, body: appdetails_011_response)
+
+      stub_request(:get, store_steamwered012)
+        .to_return(status: 200, body: appdetails_012_response)
+
+      stub_request(:get, platinum_platinum_protondb)
+        .to_return(status: 200, body: proton_platinum_platinum_response)
+
+      stub_request(:get, platinum_gold_protondb)
+        .to_return(status: 200, body: proton_platinum_gold_response)
+
+      stub_request(:get, gold_platinum_protondb)
+        .to_return(status: 200, body: proton_gold_platinum_response)
+
+      stub_request(:get, gold_gold_protondb)
+        .to_return(status: 200, body: proton_gold_gold_response)
+
+      stub_request(:get, gold_silver_protondb)
+        .to_return(status: 200, body: proton_gold_silver_response)
+
+      stub_request(:get, silver_gold_protondb)
+        .to_return(status: 200, body: proton_silver_gold_response)
+
+      stub_request(:get, silver_silver_protondb)
+        .to_return(status: 200, body: proton_silver_silver_response)
+
+      stub_request(:get, silver_bronze_protondb)
+        .to_return(status: 200, body: proton_silver_bronze_response)
+
+      stub_request(:get, bronze_silver_protondb)
+        .to_return(status: 200, body: proton_bronze_silver_response)
+
+      stub_request(:get, bronze_bronze_protondb)
+        .to_return(status: 200, body: proton_bronze_bronze_response)
+
+      stub_request(:get, borked_borked_protondb)
+        .to_return(status: 200, body: proton_borked_borked_response)
+
+      stub_request(:get, unknown_unknown_protondb)
+        .to_return(status: 200, body: proton_unknown_unknown_response)
+    end
+
+    list_type_and_services.each do |list, service|
+      it "Should return ordered #{list}" do
+        games = service.new.call(SteamLibrary.new('checklist' => list,
+                                                  'steam_id' => '12345678912345678'))
+
+        expect(games[0].tier).to eql('native')
+        expect(games[0].trending_tier).to eql('native')
+        expect(games[1].tier).to eql('platinum')
+        expect(games[1].trending_tier).to eql('platinum')
+        expect(games[2].tier).to eql('platinum')
+        expect(games[2].trending_tier).to eql('gold')
+        expect(games[3].tier).to eql('gold')
+        expect(games[3].trending_tier).to eql('platinum')
+        expect(games[4].tier).to eql('gold')
+        expect(games[4].trending_tier).to eql('gold')
+        expect(games[5].tier).to eql('gold')
+        expect(games[5].trending_tier).to eql('silver')
+        expect(games[6].tier).to eql('silver')
+        expect(games[6].trending_tier).to eql('gold')
+        expect(games[7].tier).to eql('silver')
+        expect(games[7].trending_tier).to eql('silver')
+        expect(games[8].tier).to eql('silver')
+        expect(games[8].trending_tier).to eql('bronze')
+        expect(games[9].tier).to eql('bronze')
+        expect(games[9].trending_tier).to eql('silver')
+        expect(games[10].tier).to eql('bronze')
+        expect(games[10].trending_tier).to eql('bronze')
+        expect(games[11].tier).to eql('borked')
+        expect(games[11].trending_tier).to eql('borked')
+        expect(games[12].tier).to eql('unknown')
+        expect(games[12].trending_tier).to eql('unknown')
+      end
+    end
+  end
 end
