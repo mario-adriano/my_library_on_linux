@@ -103,23 +103,12 @@ html {
     min-height: 100%;
 }
 
-body {
-    margin-bottom: 100px;
-}
 
-footer {
+.footer {
     background-color: $body-color;
     left: 0px;
     width: 100%;
     position:absolute;
-}
-
-footer.bottom-0 {
-    bottom: 0;
-}
-
-footer.bottom-10 {
-    bottom: 10;
 }
 
 tbody > tr {
@@ -127,8 +116,6 @@ tbody > tr {
 }
 
 span.playable-pie-chart {
-    // font-family: 'Font Awesome 6 Free';
-    // font-weight: 900;
     font-weight: bold;
 }
 
@@ -253,4 +240,16 @@ tr.unknown {
 
 i.unknown {
     color: $unknown-color;
+}
+
+.height-vh {
+    min-height: 70vh;
+}
+
+.container-margin-top {
+    margin-top: 110px;
+}
+
+.header-height {
+    max-height: 30px;
 }

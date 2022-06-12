@@ -1,0 +1,17 @@
+<div class="row header-height">
+    <div class="col-sm-3">
+        <%= link_to image_tag("mlol.png"), steam_library_path %>
+    </div>
+    <% if current_page?(steam_library_path) %>
+        <div class="col-sm-5">
+            <div class="right-align">
+                <a href="<%= request.path %>?locale=en">
+                    <span class="flag-icon flag-icon-us"></span>
+                </a>
+                <a href="<%= request.path %>?locale=pt-BR">
+                    <span class="flag-icon flag-icon-br"></span>
+                </a>
+            </div>
+        </div>
+    <% end %>
+</div>
