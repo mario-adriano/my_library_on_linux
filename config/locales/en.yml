@@ -1,7 +1,7 @@
 en:
   static_pages:
+    website_name: "MyLibraryOnLinux"
     index:
-      title: "MyLibraryOnLinux"
       submit: "Submit"
       loading: "Loading..."
       check: "Check compatibility of your Steam library"
@@ -25,10 +25,14 @@ en:
       playables: "PLAYABLES"
       go_to_wishlist: "Go to Wishlist"
       go_to_library: "Go to Library"
+    error:
+      locale: "en"
+      failed: "Failed to return your Steam library! Made your Steam profile public:"
+      change_privacy: "Visit this %{href} to change privacy"
   games:
     errors:
       appid_must_be_unique: "Appid must be unique."
   steam_library:
     errors:
       an_error_occurred: "An error occurred!"
-      invalid_value: "Invalid value."
+      invalid_value: "Please enter a valid SteamID."

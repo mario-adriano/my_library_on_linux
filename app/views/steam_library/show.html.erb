@@ -1,7 +1,8 @@
 <div class="white-body">
   <%= render "pie_chart" %>
   <%= link_to @steam_library_presenter.list_link_name, steam_library_show_path(:steam_library =>
-        {steam_id: @steam_library_presenter.steam_id, checklist: @steam_library_presenter.change_list}), class: "btn btn-primary btn-lg list-link" %>
+        {steam_id: @steam_library_presenter.steam_id, checklist: @steam_library_presenter.change_list}), class: "btn btn-primary btn-lg list-link", data: 
+                    { disable_with: "<i class='fas fa-spinner fa-spin'></i> #{t('static_pages.index.loading')}"} %>
   <table class='table table-striped'>
     <thead>
       <tr>

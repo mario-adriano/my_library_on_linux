@@ -1,8 +1,10 @@
 <div class="row header-height">
     <div class="col-sm-3">
-        <%= link_to image_tag("mlol.png"), steam_library_path %>
+        <% unless current_page?(steam_library_path) || current_page?(root_path) %>
+            <%= link_to image_tag("mlol.png"), steam_library_path %> <span class="logo-text"><%= t('static_pages.website_name') %></span>
+        <% end %>
     </div>
-    <% if current_page?(steam_library_path) %>
+    <% if current_page?(steam_library_path) || current_page?(root_path) %>
         <div class="col-sm-5">
             <div class="right-align">
                 <a href="<%= request.path %>?locale=en">

@@ -1,4 +1,11 @@
 <div class="container-fluid">
   <div class="light-well box height-vh white-body ">
+    <div class="div-error">
+      <p class="padding"><%= t('static_pages.error.failed') %></p>
+      <div class="div-margin">
+        <p><%= t('static_pages.error.change_privacy', href: link_to("link", "https://steamcommunity.com/my/edit/settings", target: "_blank")).html_safe %></p>
+        <%= image_tag "steamcommunity/steam-details.#{t('static_pages.error.locale')}.png" %>
+      </div> 
+    </div> 
   </div>
 </div>

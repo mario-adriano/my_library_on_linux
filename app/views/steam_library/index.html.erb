@@ -1,7 +1,7 @@
 <div class="container-fluid container-margin-top">
   <div class="light-well box height-vh ">
     <div class="row">
-      <h1 class="page-header text-center"><%= t('static_pages.index.title') %></h1>
+      <h1 class="page-header text-center"><%= t('static_pages.website_name') %></h1>
       <p class="light-gray text-center"><%= t('static_pages.index.check')%></p>
     </div>
     <div class="col-sm-12">
@@ -22,7 +22,7 @@
               <%= f.button t('static_pages.index.submit'), class:"form-control btn col-sm-12 btn-success btn-lg btn-block btn", data: 
                     { disable_with: "<i class='fas fa-spinner fa-spin'></i> #{t('static_pages.index.loading')}"} %>
             </div>
-            <div class="login-or">
+            <div class="login-error">
               <%= flash_messages %>
             </div>
           </div>

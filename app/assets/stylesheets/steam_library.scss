@@ -36,60 +36,60 @@ $unknown-color: rgb(187, 179, 179);
 }
 
 @font-face {
-    font-family: 'Mad_Pixels';
-    src: url('/assets/Mad_Pixels.otf')
+    font-family: 'Gogh-ExtraBold';
+    src: url('/assets/Gogh-ExtraBold.ttf')
  }
 
- h1 {
-    font-family: 'Mad_Pixels';
+h1 {
+    font-family: 'Gogh-ExtraBold';
     color: #fff;
 }
 
- @media only screen and (max-width: 450px) {
+@media only screen and (max-width: 450px) {
     h1 {
         font-size: 2rem !important;
     }
- }
+}
 
- body {
-     background-color: $body-color;
- }
+body {
+    background-color: $body-color;
+}
 
- p.light-gray {
-     color: #ccc;
- }
+p.light-gray {
+    color: #ccc;
+}
 
- button.btn {
+button.btn {
     background-color: $component-color;
     color: white;
- }
+}
 
- button.btn:hover {
+button.btn:hover {
     background-color: $component-color-hover;
     color: white;
- }
+}
 
- a.btn {
+a.btn {
     background-color: $component-color;
     color: white;
- }
+}
 
- a.btn:hover {
+a.btn:hover {
     background-color: $component-color-hover;
     color: white;
- }
+}
 
- a.list-link {
-     margin-left: 2px;
-     margin-bottom: 2px;
- }
+a.list-link {
+    margin-left: 2px;
+    margin-bottom: 2px;
+}
 
- input.form-control {
-     color: #ccc !important;
-     font-weight: bold;
- }
+input.form-control {
+    color: #ccc !important;
+    font-weight: bold;
+}
 
- input:focus {
+input:focus {
     border-bottom: 1px solid $component-color !important;
     box-shadow: 0 1px 0 0 $component-color !important
 }
@@ -247,9 +247,32 @@ i.unknown {
 }
 
 .container-margin-top {
-    margin-top: 110px;
+    margin-top: 160px;
 }
 
 .header-height {
     max-height: 30px;
 }
+
+.div-error {
+    margin-left: 40px;
+    padding-bottom: 20px;
+}
+
+.div-margin {
+    margin-left: 40px;
+}
+
+p.padding {
+    padding-top: 40px;
+}
+
+.login-error {
+    margin-top: 10px;
+}
+
+.logo-text {
+    color: white; 
+    font-family: 'Gogh-ExtraBold'; 
+}
+                                                                        

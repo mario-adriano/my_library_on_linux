@@ -1,7 +1,7 @@
 pt-BR:
   static_pages:
+    website_name: "MyLibraryOnLinux"
     index:
-      title: "MyLibraryOnLinux"
       submit: "Enviar"
       loading: "Carregando..."
       check: "Verifique a compartibilidade da sua biblioteca"
@@ -25,10 +25,14 @@ pt-BR:
       playables: "JOGÁVEIS"
       go_to_wishlist: "Ir para Lista de Desejo"
       go_to_library: "Ir para Biblioteca"
+    error:
+      locale: "pt-br"
+      failed: "Falha ao trazer sua biblioteca Steam! Torne seu perfil da Steam público:"
+      change_privacy: "Visite este %{href} para alterar a privacidade"
   games:
     errors:
       appid_must_be_unique: "Appid deve ser único."
   steam_library:
     errors:
       an_error_occurred: "Ocorreu um erro!"
-      invalid_value: "Valor inválido."
+      invalid_value: "Insira um SteamID válido."
