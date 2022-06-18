@@ -1,4 +1,4 @@
-module LibraryProtonError
+module MyLibraryOnLinuxError
   class Error < StandardError
     def initialize(msg = nil)
       super(msg)

@@ -21,7 +21,7 @@ module SteamLibraryService
     private
 
     def find_games_by_steam_id(steam_id)
-      response = Faraday.get(STEAM_LIBRARY, { key: LibraryProton::STEAM_KEY, steamid: steam_id })
+      response = Faraday.get(STEAM_LIBRARY, { key: MyLibraryOnLinux::STEAM_KEY, steamid: steam_id })
       raise_bad_response(response)
       response.body
     end
@@ -68,7 +68,7 @@ module SteamLibraryService
   private
 
   def raise_bad_response(response)
-    raise LibraryProtonError::Error::ResquestError unless success?(response)
+    raise MyLibraryOnLinuxError::Error::ResquestError unless success?(response)
   end
 
   def success?(response)

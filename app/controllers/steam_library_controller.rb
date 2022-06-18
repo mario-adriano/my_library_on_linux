@@ -16,7 +16,7 @@ class SteamLibraryController < ApplicationController
     else
       show_error_message_and_change_page(I18n.t('steam_library.errors.invalid_value'), steam_library_path)
     end
-  rescue LibraryProtonError::Error::ResquestError
+  rescue MyLibraryOnLinuxError::Error::ResquestError
     show_error_message_and_change_page(I18n.t('steam_library.errors.an_error_occurred'), steam_library_path)
   end
 

@@ -30,7 +30,8 @@ module SteamLibraryHelper
 
   def games_pie_chart(games)
     colors = { 'native' => '#4da338', 'platinum' => 'rgb(180, 199, 220)', 'gold' => '#ffce41',
-               'silver' => 'rgb(166, 166, 166)', 'bronze' => 'rgb(205, 127, 50)', 'borked' => '#bf5151', 'unknown' => 'rgb(187, 179, 179)' }
+               'silver' => 'rgb(166, 166, 166)', 'bronze' => 'rgb(205, 127, 50)', 'borked' => '#bf5151',
+               'unknown' => 'rgb(187, 179, 179)' }
     ordered_game = ordered_game(games)
     pie_chart(ordered_game,
               width: '250px',

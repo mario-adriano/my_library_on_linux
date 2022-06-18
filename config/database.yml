@@ -1,7 +1,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: library_development
+  database: my_library_on_linux_development
   pool: 5
   username: admindb
   password: password1
@@ -13,7 +13,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: library_testing
+  database: my_library_on_linux_testing
   pool: 5
   username: admindb
   password: password1
@@ -22,7 +22,7 @@ test:
 production:
   adapter: postgresql
   encoding: unicode
-  database: library_production
+  database: my_library_on_linux_production
   pool: 5
   username: <%= ENV['DATABASE_USER'] %>
   password: <%= ENV['DATABASE_PASSWORD'] %>

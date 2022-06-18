@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module LibraryProton
+module MyLibraryOnLinux
   STEAM_KEY = ENV['STEAM_KEY']
   class Application < Rails::Application
     VERSION = 'git describe --abbrev=0'.chomp
