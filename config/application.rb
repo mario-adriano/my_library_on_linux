@@ -9,8 +9,6 @@ Bundler.require(*Rails.groups)
 module MyLibraryOnLinux
   STEAM_KEY = ENV['STEAM_KEY']
   class Application < Rails::Application
-    VERSION = 'git describe --abbrev=0'.chomp
-
     config.time_zone = 'America/Sao_Paulo'
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.1

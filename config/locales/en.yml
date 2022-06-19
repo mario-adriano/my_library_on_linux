@@ -8,6 +8,7 @@ en:
     footer:
       website_is_not_affiliated: "This site has no affiliation with Valve Software."
       mit_license: "MIT License"
+      version: "Version:"
     show:
       tier:
         native: "NATIVE"
