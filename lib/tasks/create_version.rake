@@ -3,9 +3,11 @@ task :create_version do
 
   version_file = "#{Rails.root}/config/initializers/version.rb"
   git_tag = `git describe --abbrev=0 --tags`
-  version_string = "class #{Rails.application.class.module_parent_name}::Application\n"
-  version_string += "  VERSION = #{git_tag}"
-  version_string += 'end'
-  File.open(version_file, 'w') { |f| f.print(version_string) }
-  $stderr.print(version_string)
+  file = []
+  file.push("class #{Rails.application.class.module_parent_name}::Application")
+  file.push("  VERSION = '#{git_tag.strip}'.freeze")
+  file.push('end')
+  formatted_file = file.join("\n")
+  File.open(version_file, 'w') { |f| f.print(formatted_file) }
+  $stderr.print(formatted_file)
 end
