@@ -1,24 +1,29 @@
-# README
+### Tópicos
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- [Descrição do projeto](#descrição-do-projeto)
 
-Things you may want to cover:
+- [Ferramentas utilizadas](#ferramentas-utilizadas)
 
-* Ruby version
+- [Alguns dados para execução do projeto](#alguns-dados-para-execução-do-projeto)
 
-* System dependencies
+- [Desenvolvedor](#desenvolvedor)
 
-* Configuration
+## Descrição do projeto
 
-* Database creation
+<p align="justify">
+ MyLibraryOnlinux é um projeto com a finalidade mostrar a compartibilidade de sua biblioteca Steam em sistema operacional de kernel Linux, mostrando através de um ranking de compartibilidade com software Proton e jogos nativos, utilizando dados da Steam e ProtonDB.</p>
 
-* Database initialization
+## Ferramentas utilizadas
 
-* How to run the test suite
+- Ruby - 3.0.2
+- Ruby on Rails - 6.1.4
+- PostgreSQL - 13
 
-* Services (job queues, cache servers, search engines, etc.)
+## Alguns dados para execução do projeto
 
-* Deployment instructions
+- Necessário definir uma variável de ambiente chamada `STEAM_KEY` com a chave de API da Steam.
+- Para execução em produção será necessário definir as variáveis de ambiente `DATABASE_USER`, `DATABASE_PASSWORD` e `DATABASE_HOST`, com dados do banco PostgreSQL.
 
-* ...
+## Desenvolvedor
+
+[<img src="https://avatars.githubusercontent.com/u/7767418?s=400&v=4" width=115><br><sub>Mário Sérgio Adriano</sub>](https://github.com/mario-adriano)
