@@ -24,6 +24,6 @@ production:
   encoding: unicode
   database: my_library_on_linux_production
   pool: 5
-  username: <%= ENV['DATABASE_USER'] %>
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= ENV['DATABASE_HOST'] %>
+  username: admindb
+  password: password1
+  host: localhost
