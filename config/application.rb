@@ -23,7 +23,7 @@ module MyLibraryOnLinux
     config.i18n.available_locales = %w[en pt-BR]
     config.i18n.default_locale = 'en'
 
-    # config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
+    config.assets.paths << Rails.root.join('vendor', 'assets', 'fonts')
     # config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
   end
 end
