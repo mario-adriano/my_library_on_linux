@@ -22,7 +22,6 @@
 ## Alguns dados para execução do projeto
 
 - Necessário definir uma variável de ambiente chamada `STEAM_KEY` com a chave de API da Steam.
-- Para execução em produção será necessário definir as variáveis de ambiente `DATABASE_USER`, `DATABASE_PASSWORD` e `DATABASE_HOST`, com dados do banco PostgreSQL.
 
 ## Desenvolvedor
 
