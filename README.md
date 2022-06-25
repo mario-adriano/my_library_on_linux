@@ -25,4 +25,4 @@
 
 ## Desenvolvedor
 
-[<img src="https://avatars.githubusercontent.com/u/7767418?s=400&v=4" width=115><br><sub>Mário Sérgio Adriano</sub>](https://github.com/mario-adriano)
+[<img src="https://avatars.githubusercontent.com/u/7767418?s=400&v=4" width=115><br><sub>Mário Sérgio Adriano -  LinkedIn</sub>](https://br.linkedin.com/in/m%C3%A1rio-s%C3%A9rgio-adriano-5b0bb197)
