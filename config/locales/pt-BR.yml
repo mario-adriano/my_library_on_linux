@@ -9,6 +9,7 @@ pt-BR:
       website_is_not_affiliated: "Este site não tem afiliação com a Valve Software."
       gpl_license: "Licença GPL-3.0"
       version: "Versão:"
+      dev: "MyLibraryOnLinux é um projeto desenvolvido por %{href}."
     show:
       tier:
         native: "NATIVO"

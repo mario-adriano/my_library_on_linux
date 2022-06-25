@@ -1,9 +1,12 @@
 <div class="footer text-center">
     <div>
-        <p class="text-secondary"><%= t('static_pages.footer.website_is_not_affiliated')%></p>
+        <span class="text-secondary"><%= t('static_pages.footer.dev', href: link_to("Mário Adriano", "https://br.linkedin.com/in/m%C3%A1rio-s%C3%A9rgio-adriano-5b0bb197", target: "_blank")).html_safe %></span>
+    </div>
+    <div>
+        <span class="text-secondary"><%= t('static_pages.footer.website_is_not_affiliated')%></span>
     </div>        
     <div>
         <a href="https://github.com/mario-adriano/my_library_on_linux">GitHub</a>
-        <span class="text-secondary"> | <%= t('static_pages.footer.gpl_license') %> | <%= t('static_pages.footer.version') %> <%= MyLibraryOnLinux::Application::VERSION %></span>
+        <span class="text-secondary"> | <%= t('static_pages.footer.mit_license') %> | <%= t('static_pages.footer.version') %> <%= MyLibraryOnLinux::Application::VERSION %></span>
     </div>
 </div>
