@@ -1,3 +1,3 @@
 class MyLibraryOnLinux::Application
-  VERSION = 'v1.0.3'.freeze
+  VERSION = 'v1.1.0'.freeze
 end

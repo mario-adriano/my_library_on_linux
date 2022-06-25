@@ -177,6 +177,10 @@ i.native {
     color: $native-color;
 }
 
+.svg-inline--fa.fa-circle.native {
+    color: $native-color;
+}
+
 .table-striped > tbody > tr.native:nth-child(2n+1) > td > a, 
 .table-striped > tbody > tr.native:nth-child(2n+1) > th > a, 
 .table-striped > tbody > tr.native:nth-child(2n+1) > td {
@@ -191,11 +195,19 @@ i.platinum {
     color: $platinum-color;
 }
 
+.svg-inline--fa.fa-circle.platinum {
+    color: $platinum-color;
+}
+
 tr.gold {
     background-color: $gold-color;
 }
 
 i.gold {
+    color: $gold-color;
+}
+
+.svg-inline--fa.fa-circle.gold {
     color: $gold-color;
 }
 
@@ -207,11 +219,19 @@ i.silver {
     color: $silver-color;
 }
 
+.svg-inline--fa.fa-circle.silver {
+    color: $silver-color;
+}
+
 tr.bronze {
     background-color: $bronze-color;
 }
 
 i.bronze {
+    color: $bronze-color;
+}
+
+.svg-inline--fa.fa-circle.bronze {
     color: $bronze-color;
 }
 
@@ -228,6 +248,10 @@ i.borked {
     color: $borked-color;
 }
 
+.svg-inline--fa.fa-circle.borked {
+    color: $borked-color;
+}
+
 .table-striped > tbody > tr.borked:nth-child(2n+1) > td > a, 
 .table-striped > tbody > tr.borked:nth-child(2n+1) > th > a, 
 .table-striped > tbody > tr.borked:nth-child(2n+1) > td {
@@ -239,6 +263,10 @@ tr.unknown {
 }
 
 i.unknown {
+    color: $unknown-color;
+}
+
+.svg-inline--fa.fa-circle.unknown {
     color: $unknown-color;
 }
 

@@ -1,13 +1,12 @@
 # frozen_string_literal: true
 
-# This service fetches game data from database and if outdated it will fetch it from protondb api
+# rubocop:disable Style/Documentation
+
 module SteamLibraryService
   NATIVE = 'native'
   STEAM_DETAILS_GAME = 'https://store.steampowered.com/api/appdetails?'
   PROTONDB = 'https://www.protondb.com/api/v1/reports/summaries'
 
-  # This class will query the steam games library and its data in protondb
-  # and then persist the data and return a list of games with their compatibility.
   class ShowLibraryService
     include SteamLibraryService
 
@@ -37,8 +36,6 @@ module SteamLibraryService
     end
   end
 
-  # This class will query the steam games wishlist and its data in protondb
-  # and then persist the data and return a list of games with their compatibility.
   class ShowWishListService
     include SteamLibraryService
 
@@ -88,15 +85,13 @@ module SteamLibraryService
   def add_native_level_for_linux_game?(game)
     response = Faraday.get STEAM_DETAILS_GAME, { appids: game.appid }
     raise_bad_response(response)
-    json = {}
-    json = JSON.parse(response.body) if success?(response)
+    json = success?(response) ? JSON.parse(response.body) : {}
     success_and_platform_linux?(json, game.appid)
   end
 
   def add_level_for_execution_proton(game)
     response = Faraday.get "#{PROTONDB}/#{game.appid}.json"
-    json = {}
-    json = JSON.parse(response.body) if success?(response)
+    json = success?(response) ? JSON.parse(response.body) : {}
     [json['tier'].try(:to_sym), json['trendingTier'].try(:to_sym)]
   end
 
