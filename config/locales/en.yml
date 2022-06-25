@@ -7,7 +7,7 @@ en:
       check: "Check compatibility of your Steam library"
     footer:
       website_is_not_affiliated: "This site has no affiliation with Valve Software."
-      mit_license: "MIT License"
+      gpl_license: "GPL-3.0 License"
       version: "Version:"
     show:
       tier:
