@@ -6,6 +6,8 @@
 
 - [Alguns dados para execução do projeto](#alguns-dados-para-execução-do-projeto)
 
+- [Teste online](#teste-online)
+
 - [Desenvolvedor](#desenvolvedor)
 
 ## Descrição do projeto
@@ -22,6 +24,10 @@
 ## Alguns dados para execução do projeto
 
 - Necessário definir uma variável de ambiente chamada `STEAM_KEY` com a chave de API da Steam.
+
+## Teste online
+
+- [Link](https://mylibraryonlinux.herokuapp.com)
 
 ## Desenvolvedor
 
