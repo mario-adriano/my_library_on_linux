@@ -53,6 +53,18 @@ h1 {
     td.pie-chart-mobile {
         padding: 0rem 0rem;
     }
+
+    div.pie-chart {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+@media only screen and (min-width: 451px) {
+    div.pie-chart {
+        width: 250px;
+        height: 250px;
+    }
 }
 
 body {

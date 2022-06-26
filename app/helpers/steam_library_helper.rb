@@ -34,8 +34,8 @@ module SteamLibraryHelper
                'unknown' => 'rgb(187, 179, 179)' }
     ordered_game = ordered_game(games)
     pie_chart(ordered_game,
-              width: '250px',
-              height: '250px',
+              width: '100%',
+              height: '100%',
               legend: false,
               donut: true,
               colors: ordered_game.map { |key, _value| colors[key] })

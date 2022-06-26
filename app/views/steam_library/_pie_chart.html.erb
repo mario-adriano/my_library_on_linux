@@ -2,7 +2,7 @@
     <table class="table w-auto small">
         <tbody>
         <tr>
-            <td rowspan='8' class='pie-chart-mobile'><%= games_pie_chart(@steam_library_presenter.games) %></td>
+            <td rowspan='8' class='pie-chart-mobile'><div class='pie-chart'><%= games_pie_chart(@steam_library_presenter.games) %></div></td>
             <td>
                 <i class="fa-solid fa-circle native"></i> + <i class="fa-solid fa-circle platinum"></i> + <i class="fa-solid fa-circle gold"></i> 
                 <span class="playable-pie-chart"><%= t("static_pages.show.playables")%>: </span>
