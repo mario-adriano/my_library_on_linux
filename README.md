@@ -11,7 +11,7 @@
 ## Descrição do projeto
 
 <p align="justify">
- MyLibraryOnlinux é um projeto com a finalidade mostrar a compartibilidade de sua biblioteca Steam em sistema operacional de kernel Linux, mostrando através de um ranking de compartibilidade com software Proton e jogos nativos, utilizando dados da Steam e ProtonDB.</p>
+ MyLibraryOnlinux é um projeto com a finalidade mostrar a compatibilidade de sua biblioteca Steam em sistema operacional de kernel Linux, mostrando através de um ranking de compatibilidade com software Proton e jogos nativos, utilizando dados da Steam e ProtonDB.</p>
 
 ## Ferramentas utilizadas
 
@@ -25,4 +25,4 @@
 
 ## Desenvolvedor
 
-[<img src="https://avatars.githubusercontent.com/u/7767418?s=400&v=4" width=115><br><sub>Mário Sérgio Adriano -  LinkedIn</sub>](https://br.linkedin.com/in/m%C3%A1rio-s%C3%A9rgio-adriano-5b0bb197)
+[<img src="https://avatars.githubusercontent.com/u/7767418?s=400&v=4" width=115><br><sub>Mário Sérgio Adriano - LinkedIn</sub>](https://br.linkedin.com/in/m%C3%A1rio-s%C3%A9rgio-adriano-5b0bb197)
