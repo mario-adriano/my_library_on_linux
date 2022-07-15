@@ -68,9 +68,7 @@ module SteamLibraryService
     raise MyLibraryOnLinuxError::Error::ResquestError unless success?(response)
   end
 
-  def success?(response)
-    !(400..599).include?(response.status)
-  end
+  def success?(response) = !(400..599).include?(response.status)
 
   def save_games_with_tier(games)
     loaded_games = load_library(games)

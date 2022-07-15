@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
-# This model represents the user's game library and does not persist in the database
+# rubocop:disable Style/Documentation
+
 class SteamLibrary
   extend ActiveModel::Naming
   include ActiveModel::Conversion
@@ -19,7 +20,7 @@ class SteamLibrary
     @checklist = values['checklist'] || 'library'
   end
 
-  def persisted?() = false
+  def persisted? = false
 
   def change_list
     if @checklist.eql?(SteamLibrary.checklist_library)
@@ -36,7 +37,7 @@ class SteamLibrary
   def total_games = games.count
 
   def playable_count
-    games.select { |game| game.tier == 'native' || game.tier == 'platinum' || game.tier == 'gold' }.size
+    games.select { |game| game.tier == 'native' || game.tier == 'platinum' || game.tier == 'gold' }.length
   end
 
   def percentage_of_playables
@@ -45,7 +46,7 @@ class SteamLibrary
 
   Game.tiers.each do |key, _value|
     define_method :"#{key}_count" do
-      games.select { |game| game.tier == key }.size
+      games.select { |game| game.tier == key }.length
     end
 
     define_method :"percentage_of_#{key.pluralize}" do

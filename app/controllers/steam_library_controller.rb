@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# This class assembles the library games list
+# rubocop:disable Style/Documentation
 class SteamLibraryController < ApplicationController
   before_action :set_locale
   def index
@@ -34,9 +34,7 @@ class SteamLibraryController < ApplicationController
     end
   end
 
-  def zero_game_count?
-    @steam_library.total_games.zero?
-  end
+  def zero_game_count? = @steam_library.total_games.zero?
 
   def show_error_message_and_change_page(msg, page)
     flash[:danger] = msg

@@ -1,3 +1,4 @@
+# rubocop:disable Style/Documentation
 module MyLibraryOnLinuxError
   class Error < StandardError
     def initialize(msg = nil)
